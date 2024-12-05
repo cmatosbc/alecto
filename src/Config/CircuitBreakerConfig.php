@@ -11,7 +11,8 @@ class CircuitBreakerConfig
         private readonly int $successThreshold = 2,
         private readonly int $resetTimeout = 30,
         private readonly int $operationTimeout = 5
-    ) {}
+    ) {
+    }
 
     public function getFailureThreshold(): int
     {

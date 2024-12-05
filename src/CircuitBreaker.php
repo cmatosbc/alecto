@@ -44,7 +44,7 @@ class CircuitBreaker
         if ($this->isOpen()) {
             $this->metrics->incrementRejections();
             $this->log('Circuit is open, request rejected');
-            
+
             if ($fallback !== null) {
                 return $fallback();
             }
@@ -60,7 +60,7 @@ class CircuitBreaker
             return $result;
         } catch (\Throwable $e) {
             $this->onFailure($e);
-            
+
             if ($fallback !== null) {
                 return $fallback();
             }
@@ -72,7 +72,7 @@ class CircuitBreaker
     {
         $this->failureCount = 0;
         $this->metrics->incrementSuccesses();
-        
+
         if ($this->state === CircuitState::HALF_OPEN) {
             $this->successCount++;
             if ($this->successCount >= $this->config->getSuccessThreshold()) {
@@ -87,11 +87,11 @@ class CircuitBreaker
         $this->successCount = 0;
         $this->lastFailureTime = time();
         $this->metrics->incrementFailures();
-        
+
         if ($this->failureCount >= $this->config->getFailureThreshold()) {
             $this->transitionTo(CircuitState::OPEN);
         }
-        
+
         $this->log("Circuit breaker failure: " . $e->getMessage());
     }
 
@@ -111,14 +111,14 @@ class CircuitBreaker
         $oldState = $this->state;
         $this->state = $newState;
         $this->lastStateChange = time();
-        
+
         if ($newState === CircuitState::CLOSED) {
             $this->failureCount = 0;
             $this->successCount = 0;
         } elseif ($newState === CircuitState::HALF_OPEN) {
             $this->successCount = 0;
         }
-        
+
         $this->log("Circuit breaker state changed from {$oldState->value} to {$newState->value}");
     }
 

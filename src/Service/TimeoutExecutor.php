@@ -43,27 +43,27 @@ class TimeoutExecutor
         while (time() - $start < $timeout) {
             $status = null;
             $res = pcntl_waitpid($pid, $status, WNOHANG);
-            
+
             if ($res === -1) {
                 shmop_delete($shmId);
                 throw new \RuntimeException('Error waiting for child process');
             }
-            
+
             if ($res > 0) {
                 $data = shmop_read($shmId, 0, 1024);
                 shmop_delete($shmId);
-                
+
                 if (pcntl_wifexited($status) && pcntl_wexitstatus($status) === 0) {
                     return unserialize($data);
                 }
-                
+
                 $error = unserialize($data);
                 throw new \RuntimeException($error['error'] ?? "Operation failed");
             }
-            
+
             usleep(100000); // 100ms
         }
-        
+
         posix_kill($pid, SIGKILL);
         pcntl_waitpid($pid, $status); // Clean up zombie process
         shmop_delete($shmId);
