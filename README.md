@@ -1,4 +1,4 @@
-# PHP Circuit Breaker Library
+# Alecto - PHP Circuit Breaker Library
 
 [![PHPUnit Tests](https://github.com/cmatosbc/alecto/actions/workflows/phpunit.yml/badge.svg)](https://github.com/cmatosbc/alecto/actions/workflows/phpunit.yml) [![PHP Composer](https://github.com/cmatosbc/alecto/actions/workflows/composer.yml/badge.svg)](https://github.com/cmatosbc/alecto/actions/workflows/composer.yml) [![PHP Lint](https://github.com/cmatosbc/alecto/actions/workflows/lint.yml/badge.svg)](https://github.com/cmatosbc/alecto/actions/workflows/lint.yml)
 
