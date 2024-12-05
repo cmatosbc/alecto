@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Circuit\Exception;
+namespace Alecto\Exception;
 
 class CircuitOpenException extends \RuntimeException
 {

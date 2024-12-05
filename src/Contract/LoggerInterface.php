@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Circuit\Contract;
+namespace Alecto\Contract;
 
 interface LoggerInterface
 {

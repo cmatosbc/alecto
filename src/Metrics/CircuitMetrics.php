@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Circuit\Metrics;
+namespace Alecto\Metrics;
 
 class CircuitMetrics
 {

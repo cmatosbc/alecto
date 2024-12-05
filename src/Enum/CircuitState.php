@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Circuit\Enum;
+namespace Alecto\Enum;
 
 enum CircuitState: string
 {

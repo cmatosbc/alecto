@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace Circuit;
+namespace Alecto;
 
-use Circuit\Config\CircuitBreakerConfig;
-use Circuit\Contract\LoggerInterface;
-use Circuit\Enum\CircuitState;
-use Circuit\Exception\CircuitOpenException;
-use Circuit\Metrics\CircuitMetrics;
-use Circuit\Service\TimeoutExecutor;
+use Alecto\Config\CircuitBreakerConfig;
+use Alecto\Contract\LoggerInterface;
+use Alecto\Enum\CircuitState;
+use Alecto\Exception\CircuitOpenException;
+use Alecto\Metrics\CircuitMetrics;
+use Alecto\Service\TimeoutExecutor;
 
 class CircuitBreaker
 {

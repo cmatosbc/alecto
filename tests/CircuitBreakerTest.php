@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Circuit\Tests;
+namespace Alecto\Tests;
 
-use Circuit\CircuitBreaker;
-use Circuit\Config\CircuitBreakerConfig;
-use Circuit\Exception\CircuitOpenException;
-use Circuit\Service\TimeoutExecutor;
-use Circuit\Enum\CircuitState;
+use Alecto\CircuitBreaker;
+use Alecto\Config\CircuitBreakerConfig;
+use Alecto\Exception\CircuitOpenException;
+use Alecto\Service\TimeoutExecutor;
+use Alecto\Enum\CircuitState;
 use PHPUnit\Framework\TestCase;
 
 class CircuitBreakerTest extends TestCase

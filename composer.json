@@ -1,5 +1,5 @@
 {
-    "name": "cmatosbc/circuit-breaker",
+    "name": "cmatosbc/alecto",
     "description": "A robust PHP Circuit Breaker implementation with type safety and modern features",
     "type": "library",
     "require": {
@@ -13,12 +13,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Circuit\\": "src/"
+            "Alecto\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Circuit\\Tests\\": "tests/"
+            "Alecto\\Tests\\": "tests/"
         }
     },
     "scripts": {

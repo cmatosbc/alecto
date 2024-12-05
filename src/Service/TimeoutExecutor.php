@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Circuit\Service;
+namespace Alecto\Service;
 
 class TimeoutExecutor
 {

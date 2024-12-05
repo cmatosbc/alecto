@@ -40,9 +40,9 @@ Requirements:
 ## 🚀 Quick Start
 
 ```php
-use Circuit\CircuitBreaker;
-use Circuit\Config\CircuitBreakerConfig;
-use Circuit\Service\TimeoutExecutor;
+use Alecto\CircuitBreaker;
+use Alecto\Config\CircuitBreakerConfig;
+use Alecto\Service\TimeoutExecutor;
 
 // Create configuration
 $config = new CircuitBreakerConfig(
@@ -114,7 +114,7 @@ $metrics['rejections']; // Rejected operations count (when circuit is open)
 class ApiClient
 {
     public function __construct(
-        private CircuitBreaker $circuitBreaker,
+        private Alecto\CircuitBreaker $circuitBreaker,
         private HttpClient $httpClient
     ) {}
 
@@ -139,7 +139,7 @@ class ApiClient
 class DatabaseRepository
 {
     public function __construct(
-        private CircuitBreaker $circuitBreaker,
+        private Alecto\CircuitBreaker $circuitBreaker,
         private PDO $pdo
     ) {}
 
@@ -165,7 +165,7 @@ class DatabaseRepository
 class PaymentService
 {
     public function __construct(
-        private CircuitBreaker $circuitBreaker,
+        private Alecto\CircuitBreaker $circuitBreaker,
         private PaymentGateway $gateway
     ) {}
 
@@ -191,37 +191,37 @@ class PaymentService
 ```php
 // config/services.yaml
 services:
-    Circuit\Config\CircuitBreakerConfig:
+    Alecto\Config\CircuitBreakerConfig:
         arguments:
             $failureThreshold: '%env(int:CIRCUIT_FAILURE_THRESHOLD)%'
             $successThreshold: '%env(int:CIRCUIT_SUCCESS_THRESHOLD)%'
             $resetTimeout: '%env(int:CIRCUIT_RESET_TIMEOUT)%'
             $operationTimeout: '%env(int:CIRCUIT_OPERATION_TIMEOUT)%'
 
-    Circuit\Service\TimeoutExecutor: ~
+    Alecto\Service\TimeoutExecutor: ~
 
-    Circuit\CircuitBreaker:
+    Alecto\CircuitBreaker:
         arguments:
-            $config: '@Circuit\Config\CircuitBreakerConfig'
-            $timeoutExecutor: '@Circuit\Service\TimeoutExecutor'
+            $config: '@Alecto\Config\CircuitBreakerConfig'
+            $timeoutExecutor: '@Alecto\Service\TimeoutExecutor'
             $logger: '@logger'
 
     App\Service\ExternalApiClient:
         arguments:
-            $circuitBreaker: '@Circuit\CircuitBreaker'
+            $circuitBreaker: '@Alecto\CircuitBreaker'
 ```
 
 ```php
 // src/Service/ExternalApiClient.php
 namespace App\Service;
 
-use Circuit\CircuitBreaker;
+use Alecto\CircuitBreaker;
 use Symfony\Contracts\HttpClient\HttpClientInterface;
 
 class ExternalApiClient
 {
     public function __construct(
-        private readonly CircuitBreaker $circuitBreaker,
+        private readonly Alecto\CircuitBreaker $circuitBreaker,
         private readonly HttpClientInterface $client
     ) {}
 
@@ -246,9 +246,9 @@ class ExternalApiClient
 // app/Providers/CircuitBreakerServiceProvider.php
 namespace App\Providers;
 
-use Circuit\CircuitBreaker;
-use Circuit\Config\CircuitBreakerConfig;
-use Circuit\Service\TimeoutExecutor;
+use Alecto\CircuitBreaker;
+use Alecto\Config\CircuitBreakerConfig;
+use Alecto\Service\TimeoutExecutor;
 use Illuminate\Support\ServiceProvider;
 
 class CircuitBreakerServiceProvider extends ServiceProvider
@@ -293,12 +293,12 @@ return [
 // app/Services/PaymentGateway.php
 namespace App\Services;
 
-use Circuit\CircuitBreaker;
+use Alecto\CircuitBreaker;
 
 class PaymentGateway
 {
     public function __construct(
-        private readonly CircuitBreaker $circuitBreaker
+        private readonly Alecto\CircuitBreaker $circuitBreaker
     ) {}
 
     public function processPayment(array $paymentData): array
