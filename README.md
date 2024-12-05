@@ -1,6 +1,6 @@
 # PHP Circuit Breaker Library
 
-[![PHPUnit Tests](https://github.com/cmatosbc/alecto/actions/workflows/phpunit.yml/badge.svg)](https://github.com/cmatosbc/alecto/actions/workflows/phpunit.yml) [![PHP Composer](https://github.com/cmatosbc/alecto/actions/workflows/composer.yml/badge.svg)](https://github.com/cmatosbc/alecto/actions/workflows/composer.yml)
+[![PHPUnit Tests](https://github.com/cmatosbc/alecto/actions/workflows/phpunit.yml/badge.svg)](https://github.com/cmatosbc/alecto/actions/workflows/phpunit.yml) [![PHP Composer](https://github.com/cmatosbc/alecto/actions/workflows/composer.yml/badge.svg)](https://github.com/cmatosbc/alecto/actions/workflows/composer.yml) [![PHP Lint](https://github.com/cmatosbc/alecto/actions/workflows/lint.yml/badge.svg)](https://github.com/cmatosbc/alecto/actions/workflows/lint.yml)
 
 A robust PHP implementation of the Circuit Breaker pattern with type safety, metrics tracking, and configurable behavior.
 
