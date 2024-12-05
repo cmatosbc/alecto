@@ -1,5 +1,5 @@
 {
-    "name": "circuit/circuit-breaker",
+    "name": "cmatosbc/circuit-breaker",
     "description": "A robust PHP Circuit Breaker implementation with type safety and modern features",
     "type": "library",
     "require": {
