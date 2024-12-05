@@ -27,7 +27,7 @@ By drawing inspiration from Alecto, we can design circuit breaker patterns that 
 Install via Composer:
 
 ```bash
-composer require circuit/circuit-breaker
+composer require cmatosbc/circuit-breaker
 ```
 
 Requirements:
@@ -363,4 +363,4 @@ The tests demonstrate:
 
 ## 📄 License
 
-MIT License - see LICENSE file for details
+This library is licensed under the GNU General Public License v3.0 - see the LICENSE file for details.
