@@ -29,7 +29,7 @@ By drawing inspiration from Alecto, we can design circuit breaker patterns that 
 Install via Composer:
 
 ```bash
-composer require cmatosbc/circuit-breaker
+composer require cmatosbc/alecto
 ```
 
 Requirements:
