@@ -1,5 +1,7 @@
 # PHP Circuit Breaker Library
 
+[![PHPUnit Tests](https://github.com/cmatosbc/alecto/actions/workflows/phpunit.yml/badge.svg)](https://github.com/cmatosbc/alecto/actions/workflows/phpunit.yml) [![PHP Composer](https://github.com/cmatosbc/alecto/actions/workflows/composer.yml/badge.svg)](https://github.com/cmatosbc/alecto/actions/workflows/composer.yml)
+
 A robust PHP implementation of the Circuit Breaker pattern with type safety, metrics tracking, and configurable behavior.
 
 In the depths of Greek mythology, Alecto, one of the three Erinyes or Furies, emerges as a formidable figure. These divine beings were born from the blood of the castrated Uranus, embodying the relentless pursuit of vengeance. Alecto, in particular, is known for her unwavering determination and relentless pursuit of justice.
